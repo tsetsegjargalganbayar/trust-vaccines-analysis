@@ -43,4 +43,4 @@ d_trustvac <- read_csv(
        col_factor(ordered = TRUE, levels = likert_levels),
        col_factor(ordered = TRUE, levels = likert_levels),
        col_factor(ordered = TRUE, levels = likert_levels),
-       col_factor(ordered = TRUE, , levels = likert_levels)))
+       col_factor(ordered = TRUE, levels = likert_levels)))

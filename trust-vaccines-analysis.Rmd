@@ -1,0 +1,46 @@
+---
+title: "Analysis of government trust and attitudes to vaccines"
+author: "Tseegi Ganbayar"
+date: "2026-11-05"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(readr)
+
+ed_levels <- c(
+  "Primary school",
+  "Secondary school (age under 15 years old)",
+  "GNVQ / GSVQ / GCSE/ SCE standard.",
+  "NVQ1, NVQ2",
+  "NVQ3/ SCE Higher Grade/ Advanced GNVQ/ GCE A/AS or similar.",
+  "NVQ4 / HNC / HND / Bachelor's degree or similar.",
+  "NVQ5 or post-graduate diploma."
+  )
+
+likert_levels <- c(
+  "Strongly disagree",
+  "Tend to disagree",
+  "Neither agree nor disagree",
+  "Tend to agree",
+  "Strongly agree"
+  )
+
+d_trustvac <- read_csv(
+  '../data/trust-vaccines.csv',
+  col_types = cols(
+       col_number(),
+       col_factor(),
+       col_factor(ordered = TRUE, levels = ed_levels),
+       col_factor(ordered = TRUE, levels = likert_levels),
+       col_factor(ordered = TRUE, levels = likert_levels),
+       col_factor(ordered = TRUE, levels = likert_levels),
+       col_factor(ordered = TRUE, levels = likert_levels),
+       col_factor(ordered = TRUE, levels = likert_levels),
+       col_factor(ordered = TRUE, levels = likert_levels),
+       col_factor(ordered = TRUE, levels = likert_levels),
+       col_factor(ordered = TRUE, levels = likert_levels),
+       col_factor(ordered = TRUE, , levels = likert_levels)))
